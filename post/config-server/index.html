@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Config GPU Server - Tsing&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Tsing Luo" /><meta name="description" content="step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &amp;#34;ServerApp&amp;#34;: { &amp;#34;password&amp;#34;: &amp;#34;sha1:$User&amp;#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/config-server/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e5982ca64960af8ce2dbe0faa1da40bc8e9b261cdd705bfeacde52d6ef79db0.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Config GPU Server" />
+<meta property="og:description" content="step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &#34;ServerApp&#34;: { &#34;password&#34;: &#34;sha1:$User&#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/config-server/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-27T18:45:48+08:00" />
+<meta property="article:modified_time" content="2021-08-27T18:45:48+08:00" />
+
+<meta itemprop="name" content="Config GPU Server">
+<meta itemprop="description" content="step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &#34;ServerApp&#34;: { &#34;password&#34;: &#34;sha1:$User&#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1"><meta itemprop="datePublished" content="2021-08-27T18:45:48+08:00" />
+<meta itemprop="dateModified" content="2021-08-27T18:45:48+08:00" />
+<meta itemprop="wordCount" content="392">
+<meta itemprop="keywords" content="GPU,Server," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Config GPU Server"/>
+<meta name="twitter:description" content="step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &#34;ServerApp&#34;: { &#34;password&#34;: &#34;sha1:$User&#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Tsing</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Tsing</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Config GPU Server</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-27 </span>
+        <div class="post-category">
+            <a href="/categories/server/"> Server </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-1-config-jupyter-lab">step 1 config jupyter lab</a>
+      <ul>
+        <li><a href="#generate-the-config-file">generate the <code>config</code> file</a></li>
+        <li><a href="#generate-the-password-file">generate the <code>password</code> file</a></li>
+        <li><a href="#copy-the-password">copy the <code>password</code></a></li>
+        <li><a href="#modify-the-following-contents">modify the following contents</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-2-modify-jupyter-lab-dashboard">step 2 modify jupyter lab dashboard</a>
+      <ul>
+        <li><a href="#modify-display_name-to-python-3torch">modify <code>display_name</code> to <code>Python 3(Torch)</code></a></li>
+        <li><a href="#modify-display_name-to-python-3tf">modify <code>display_name</code> to <code>Python 3(TF)</code></a></li>
+        <li><a href="#create-localsharejupyterkernelsvenv_tf">create <code>.local/share/jupyter/kernels/venv_tf/</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-config-serviceconf">step 3 config <code>service.conf</code></a>
+      <ul>
+        <li><a href="#create-shfile">create <code>.sh</code>file</a></li>
+        <li><a href="#create-errfile">create <code>.err</code>file</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-4-config-frpc">step 4 config frpc</a>
+      <ul>
+        <li><a href="#add-jupyter-lab-domains">add jupyter lab domains</a></li>
+        <li><a href="#start-frpc">start frpc</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-5-tencent-cloud-config">step 5 Tencent Cloud config</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="step-1-config-jupyter-lab">step 1 config jupyter lab</h1>
+<h2 id="generate-the-config-file">generate the <code>config</code> file</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ jupyter lab --generate-config
+Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="generate-the-password-file">generate the <code>password</code> file</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ jupyter lab password
+Enter password: 
+Verify password: 
+[JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="copy-the-password">copy the <code>password</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ cat /home/$User/.jupyter/jupyter_server_config.json
+{
+  &#34;ServerApp&#34;: {
+    &#34;password&#34;: &#34;sha1:$User&#34;
+  }
+}%
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="modify-the-following-contents">modify the following contents</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">c.ServerApp.ip = &#39;localhost&#39; --&gt; c.ServerApp.ip = &#39;0.0.0.0&#39;
+c.ServerApp.password = &#39; &#39; --&gt; c.ServerApp.password =&#39;sha1:5ca3687521b0:a05508e78dfb490a4f115684f1fa63a51f76aa33&#39;
+c.ServerApp.open_browser = True --&gt; c.ServerApp.open_browser = False
+c.ServerApp.port = 8888 --&gt; c.ServerApp.port = 30003
+c.ServerApp.notebook_dir = &#39;&#39; --&gt; c.ServerApp.notebook_dir = &#39;/home/$User/workspace/&#39;
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h1 id="step-2-modify-jupyter-lab-dashboard">step 2 modify jupyter lab dashboard</h1>
+<h2 id="modify-display_name-to-python-3torch">modify <code>display_name</code> to <code>Python 3(Torch)</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ nano .conda/envs/venv_torch/share/jupyter/kernels/python3/kernel.json
+{
+ &#34;argv&#34;: [
+  &#34;/home/$User/.conda/envs/venv_torch/bin/python&#34;,
+  &#34;-m&#34;,
+  &#34;ipykernel_launcher&#34;,
+  &#34;-f&#34;,
+  &#34;{connection_file}&#34;
+ ],
+ &#34;display_name&#34;: &#34;Python 3(Torch)&#34;,
+ &#34;language&#34;: &#34;python&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="modify-display_name-to-python-3tf">modify <code>display_name</code> to <code>Python 3(TF)</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ nano .conda/envs/venv_tf/share/jupyter/kernels/python3/kernel.json
+{
+ &#34;argv&#34;: [
+  &#34;/home/$User/.conda/envs/venv_torch/bin/python&#34;,
+  &#34;-m&#34;,
+  &#34;ipykernel_launcher&#34;,
+  &#34;-f&#34;,
+  &#34;{connection_file}&#34;
+ ],
+ &#34;display_name&#34;: &#34;Python 3(TF)&#34;,
+ &#34;language&#34;: &#34;python&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="create-localsharejupyterkernelsvenv_tf">create <code>.local/share/jupyter/kernels/venv_tf/</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">($User)$ mkdir -p .local/share/jupyter/kernels/venv_tf/
+($User)$ nano .local/share/jupyter/kernels/venv_tf/kernel.json
+{
+ &#34;argv&#34;: [
+  &#34;/home/$User/.conda/envs/venv_torch/bin/python&#34;,
+  &#34;-m&#34;,
+  &#34;ipykernel_launcher&#34;,
+  &#34;-f&#34;,
+  &#34;{connection_file}&#34;
+ ],
+ &#34;display_name&#34;: &#34;Python 3(TF)&#34;,
+ &#34;language&#34;: &#34;python&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h1 id="step-3-config-serviceconf">step 3 config <code>service.conf</code></h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">(root)$ cd /etc/supervisord.d
+(root)$ nano service.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>add the following content to <code>service.conf/</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[program:jupyter_xxx_gs1]
+user = $User
+command = zsh /etc/supervisord.d/xxx.sh
+startsecs = 0
+stopwaitsecs = 0
+killasgroup=true
+stopasgroup=true
+autorstart = true
+autorestart = true
+redirect_stderr=true
+stdout_logfile = /etc/supervisord.d/logfile.log
+stderr_logfile = /etc/supervisord.d/xxx.err
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="create-shfile">create <code>.sh</code>file</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">(root)$ nano xxx.sh
+</code></pre></td></tr></table>
+</div>
+</div><p>add the following content</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">su $User&lt;&lt;EOF
+xxx6636
+source /home/$User/.zshrc
+conda activate venv_torch
+jupyter lab
+
+EOF
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="create-errfile">create <code>.err</code>file</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">touch xxx.err
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h1 id="step-4-config-frpc">step 4 config frpc</h1>
+<h2 id="add-jupyter-lab-domains">add jupyter lab domains</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">(root)$ cd /home/gs-1/frp_gs
+(root)$ nano frpc.ini
+</code></pre></td></tr></table>
+</div>
+</div><p>add following content</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[jupyter_xxx-gs]
+type = http
+local_ip = 127.0.0.1
+local_port = 30003
+custom_domains = xxxgs1.663lab.com
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="start-frpc">start frpc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">(root)$ ./frpc reload -c frpc.ini
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h1 id="step-5-tencent-cloud-config">step 5 Tencent Cloud config</h1>
+<ol>
+<li>Go to <code>DNS 解析 DNSPod</code></li>
+<li>choose <code>解析</code></li>
+<li>choose <code>添加记录</code></li>
+<li><code>主机记录</code> &ndash;&gt; <code>xxxgs1</code></li>
+<li><code>记录值</code> &ndash;&gt; <code>81.69.201.59</code></li>
+<li>choose <code>保存</code></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Tsing Luo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-08-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/gpu/">GPU</a>
+          <a href="/tags/server/">Server</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/ml_peach_rgb-d_dataset/">
+            <span class="next-text nav-default">The description of ML Peach RGB-D Dataset</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Tsing-Luo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
