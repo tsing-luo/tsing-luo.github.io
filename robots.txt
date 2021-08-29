@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://tsing-luo.663lab.com/about/sitemap.xml
+Sitemap: http://localhost:1313/sitemap.xml

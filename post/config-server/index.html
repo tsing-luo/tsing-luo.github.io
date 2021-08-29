@@ -26,23 +26,23 @@
 <meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
-<link rel="canonical" href="https://tsing-luo.663lab.com/about/post/config-server/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/about/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/about/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/about/favicon-16x16.png">
-<link rel="manifest" href="/about/manifest.json">
-<link rel="mask-icon" href="/about/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="http://localhost:1313/post/config-server/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
-<link href="/about/sass/main.min.2e5982ca64960af8ce2dbe0faa1da40bc8e9b261cdd705bfeacde52d6ef79db0.css" rel="stylesheet">
+<link href="/sass/main.min.2e5982ca64960af8ce2dbe0faa1da40bc8e9b261cdd705bfeacde52d6ef79db0.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Config GPU Server" />
 <meta property="og:description" content="step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &#34;ServerApp&#34;: { &#34;password&#34;: &#34;sha1:$User&#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tsing-luo.663lab.com/about/post/config-server/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="http://localhost:1313/post/config-server/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-08-27T18:45:48+08:00" />
 <meta property="article:modified_time" content="2021-08-27T18:45:48+08:00" />
 
@@ -67,7 +67,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/about/" class="logo">Tsing</a>
+    <a href="/" class="logo">Tsing</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -77,13 +77,13 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="/about/about/">
+    <a href="/about/">
         <li class="mobile-menu-item">About</li>
-      </a><a href="/about/">
+      </a><a href="/">
         <li class="mobile-menu-item">Posts</li>
-      </a><a href="/about/tags/">
+      </a><a href="/tags/">
         <li class="mobile-menu-item">Tags</li>
-      </a><a href="/about/about/">
+      </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
   </ul>
@@ -96,7 +96,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/about/" class="logo">Tsing</a>
+  <a href="/" class="logo">Tsing</a>
 </div>
 
 
@@ -106,13 +106,13 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/about/about/">About</a>
+        <a class="menu-item-link" href="/about/">About</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">Posts</a>
+        <a class="menu-item-link" href="/">Posts</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/tags/">Tags</a>
+        <a class="menu-item-link" href="/tags/">Tags</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/about/">About</a>
+        <a class="menu-item-link" href="/about/">About</a>
       </li>
   </ul>
 </nav>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time"> 2021-08-27 </span>
         <div class="post-category">
-            <a href="/about/categories/server/"> Server </a>
+            <a href="/categories/server/"> Server </a>
             </div>
         
       </div>
@@ -493,12 +493,12 @@ custom_domains = xxxgs1.xxxlab.com
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/about/tags/gpu/">GPU</a>
-          <a href="/about/tags/server/">Server</a>
+          <a href="/tags/gpu/">GPU</a>
+          <a href="/tags/server/">Server</a>
           </div>
       <nav class="post-nav">
         
-        <a class="next" href="/about/post/ml_peach_rgb-d_dataset/">
+        <a class="next" href="/post/ml_peach_rgb-d_dataset/">
             <span class="next-text nav-default">The description of ML Peach RGB-D Dataset</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -520,7 +520,7 @@ custom_domains = xxxgs1.xxxlab.com
       <div class="social-links">
       <a href="mailto:abanatray@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://github.com/tsing-luo" class="iconfont icon-github" title="github"></a>
-  <a href="https://tsing-luo.663lab.com/about/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -555,7 +555,7 @@ custom_domains = xxxgs1.xxxlab.com
 
 
 
-<script type="text/javascript" src="/about/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

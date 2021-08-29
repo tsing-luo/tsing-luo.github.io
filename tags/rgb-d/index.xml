@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RGB-D on Tsing&#39;s Blog</title>
-    <link>https://tsing-luo.663lab.com/about/tags/rgb-d/</link>
+    <link>http://localhost:1313/tags/rgb-d/</link>
     <description>Recent content in RGB-D on Tsing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Aug 2021 10:43:48 +0800</lastBuildDate><atom:link href="https://tsing-luo.663lab.com/about/tags/rgb-d/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 10:43:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/rgb-d/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The description of ML Peach RGB-D Dataset</title>
-      <link>https://tsing-luo.663lab.com/about/post/ml_peach_rgb-d_dataset/</link>
+      <link>http://localhost:1313/post/ml_peach_rgb-d_dataset/</link>
       <pubDate>Mon, 16 Aug 2021 10:43:48 +0800</pubDate>
       
-      <guid>https://tsing-luo.663lab.com/about/post/ml_peach_rgb-d_dataset/</guid>
+      <guid>http://localhost:1313/post/ml_peach_rgb-d_dataset/</guid>
       <description>Introduction The ML Peach RGB-D Dataset is composed by 2050 multi-modal images of peach on tree filelds captured using Microsoft Azure Kinect. Each images contains 3 different modalities, including RGB image, Depth image and Infrared image.
 All images were aligned with the RGB image and manually labelled in 4 classes: unobstructed, obscured by foliage, obscured by branches and obscured by fruit. Find annotations in &amp;ldquo;.txt&amp;rdquo; format inside &amp;ldquo;annotation_yolo&amp;rdquo; folder. The camera parameters for each image taken are saved in &amp;ldquo;.</description>
     </item>
