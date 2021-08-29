@@ -243,9 +243,9 @@ Verify password:
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">c.ServerApp.ip = &#39;localhost&#39; --&gt; c.ServerApp.ip = &#39;0.0.0.0&#39;
-c.ServerApp.password = &#39; &#39; --&gt; c.ServerApp.password =&#39;sha1:5ca3687521b0:a05508e78dfb490a4f115684f1fa63a51f76aa33&#39;
+c.ServerApp.password = &#39; &#39; --&gt; c.ServerApp.password =&#39;sha1:xxx&#39;
 c.ServerApp.open_browser = True --&gt; c.ServerApp.open_browser = False
-c.ServerApp.port = 8888 --&gt; c.ServerApp.port = 30003
+c.ServerApp.port = 8888 --&gt; c.ServerApp.port = xxxxx
 c.ServerApp.notebook_dir = &#39;&#39; --&gt; c.ServerApp.notebook_dir = &#39;/home/$User/workspace/&#39;
 </code></pre></td></tr></table>
 </div>
@@ -454,8 +454,8 @@ EOF
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[jupyter_xxx-gs]
 type = http
 local_ip = 127.0.0.1
-local_port = 30003
-custom_domains = xxxgs1.663lab.com
+local_port = xxxxx
+custom_domains = xxxgs1.xxxlab.com
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="start-frpc">start frpc</h2>
@@ -474,7 +474,7 @@ custom_domains = xxxgs1.663lab.com
 <li>choose <code>解析</code></li>
 <li>choose <code>添加记录</code></li>
 <li><code>主机记录</code> &ndash;&gt; <code>xxxgs1</code></li>
-<li><code>记录值</code> &ndash;&gt; <code>81.69.201.59</code></li>
+<li><code>记录值</code> &ndash;&gt; <code>xx.xx.xxx.xx</code></li>
 <li>choose <code>保存</code></li>
 </ol>
 
