@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on Tsing&#39;s Blog</title>
-    <link>http://localhost:1313/tags/server/</link>
+    <link>https://tsing-luo.663lab.com/about/tags/server/</link>
     <description>Recent content in Server on Tsing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Aug 2021 18:45:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Aug 2021 18:45:48 +0800</lastBuildDate><atom:link href="https://tsing-luo.663lab.com/about/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Config GPU Server</title>
-      <link>http://localhost:1313/post/config-server/</link>
+      <link>https://tsing-luo.663lab.com/about/post/config-server/</link>
       <pubDate>Fri, 27 Aug 2021 18:45:48 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/config-server/</guid>
+      <guid>https://tsing-luo.663lab.com/about/post/config-server/</guid>
       <description>step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &amp;#34;ServerApp&amp;#34;: { &amp;#34;password&amp;#34;: &amp;#34;sha1:$User&amp;#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1</description>
     </item>
     

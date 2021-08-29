@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Tsing&#39;s Blog</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://tsing-luo.663lab.com/about/post/</link>
     <description>Recent content in Posts on Tsing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Aug 2021 18:45:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Aug 2021 18:45:48 +0800</lastBuildDate><atom:link href="https://tsing-luo.663lab.com/about/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Config GPU Server</title>
-      <link>http://localhost:1313/post/config-server/</link>
+      <link>https://tsing-luo.663lab.com/about/post/config-server/</link>
       <pubDate>Fri, 27 Aug 2021 18:45:48 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/config-server/</guid>
+      <guid>https://tsing-luo.663lab.com/about/post/config-server/</guid>
       <description>step 1 config jupyter lab generate the config file 1 2 ($User)$ jupyter lab --generate-config Writing default config to: /home/$User/.jupyter/jupyter_lab_config.py generate the password file 1 2 3 4 ($User)$ jupyter lab password Enter password: Verify password: [JupyterPasswordApp] Wrote hashed password to /home/$User/.jupyter/jupyter_server_config.json copy the password 1 2 3 4 5 6 ($User)$ cat /home/$User/.jupyter/jupyter_server_config.json { &amp;#34;ServerApp&amp;#34;: { &amp;#34;password&amp;#34;: &amp;#34;sha1:$User&amp;#34; } }% modify the following contents 1 ($User)$ vi /home/$User/.jupyter/jupyter_lab_config.py 1</description>
     </item>
     
     <item>
       <title>The description of ML Peach RGB-D Dataset</title>
-      <link>http://localhost:1313/post/ml_peach_rgb-d_dataset/</link>
+      <link>https://tsing-luo.663lab.com/about/post/ml_peach_rgb-d_dataset/</link>
       <pubDate>Mon, 16 Aug 2021 10:43:48 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/ml_peach_rgb-d_dataset/</guid>
+      <guid>https://tsing-luo.663lab.com/about/post/ml_peach_rgb-d_dataset/</guid>
       <description>Introduction The ML Peach RGB-D Dataset is composed by 2050 multi-modal images of peach on tree filelds captured using Microsoft Azure Kinect. Each images contains 3 different modalities, including RGB image, Depth image and Infrared image.
 All images were aligned with the RGB image and manually labelled in 4 classes: unobstructed, obscured by foliage, obscured by branches and obscured by fruit. Find annotations in &amp;ldquo;.txt&amp;rdquo; format inside &amp;ldquo;annotation_yolo&amp;rdquo; folder. The camera parameters for each image taken are saved in &amp;ldquo;.</description>
     </item>
